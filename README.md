@@ -7,5 +7,4 @@ Setup:
 
 Update:
 
-    git pull
-    git submodule update --init
+    git pull && git submodule update --init

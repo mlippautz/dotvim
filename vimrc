@@ -56,6 +56,7 @@ endfunction
 
 
 " clang_complete options (disable preview scratch window)
+" needs (ubuntu): libclang-dev
 set completeopt=menu,menuone,longest
 " Limit popup menu height
 set pumheight=15
