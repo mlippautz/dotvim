@@ -1,0 +1,12 @@
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = git@github.com:majutsushi/tagbar.git
+[submodule "bundle/minibufexpl"]
+	path = bundle/minibufexpl
+	url = git@github.com:fholgado/minibufexpl.vim.git
+[submodule "bundle/vim-gitgutter"]
+	path = bundle/vim-gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
