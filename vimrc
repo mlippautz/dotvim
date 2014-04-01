@@ -39,6 +39,8 @@ autocmd FileType tex    setlocal spell
 " ck paper configuration
 autocmd BufNewFile,BufRead paper.tex  setlocal textwidth=70
 
+autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.java TagbarOpen
+
 " MacVim
 set guifont=Monaco:h12
 
