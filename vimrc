@@ -4,8 +4,10 @@ call pathogen#infect()
 filetype plugin indent on
 
 " use the dark solarized theme
-set background=dark
+" let g:solarized_termtrans=1
+let g:solarized_termcolors=16
 colorscheme solarized
+set background=dark
 
 " misc options
 syntax on         " syntax highlighting
@@ -64,10 +66,11 @@ set pumheight=15
 let g:clang_complete_auto = 1
 " Show clang errors in the quickfix window
 let g:clang_complete_copen = 1
+let g:clang_use_library = 1
 
 if has("macunix")
   let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 elseif has("unix")
   " Note. we expect libclang.so, and in case there is only a libclang.so.1 just create a symlink
-  let g:clang_library_path = '/usr/lib'
+  let g:clang_library_path = '/usr/lib/x86_64-linux-gnu'
 endif
