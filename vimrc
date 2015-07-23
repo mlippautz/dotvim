@@ -22,6 +22,7 @@ set autoindent    " automatically indent
 set smartindent   " ... but use the smart version
 set wrap          " Wrap aroung long lines in the editor (does not change text)
 set vb            " Enable visual bell
+set modeline
 set mouse=a
 set modelines=1
 set backspace=indent,eol,start
