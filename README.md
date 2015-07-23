@@ -1,8 +1,8 @@
 # dotvim
 
-Setup:
+Setup (ssh/writeable):
 
-    git clone --recursive https://github.com/zoidrr/dotvim.git .vim
+    git clone --recursive git@github.com:mlippautz/dotvim.git
     ln -s .vim/vimrc .vimrc
 
 Update:

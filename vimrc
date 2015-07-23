@@ -68,9 +68,12 @@ let g:clang_complete_auto = 1
 let g:clang_complete_copen = 1
 let g:clang_use_library = 1
 
-if has("macunix")
+" OS dependent stuff follows.
+let os=substitute(system('uname'), '\n', '', '')
+if os == 'Darwin' || os == 'Mac'
+  "set guifont=Inconsolata-dz:h12
   let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
-elseif has("unix")
-  " Note. we expect libclang.so, and in case there is only a libclang.so.1 just create a symlink
+elseif os == 'Linux'
+  "set guifont=Inconsolata-dz\ Medium\ 10
   let g:clang_library_path = '/usr/lib/x86_64-linux-gnu'
 endif
