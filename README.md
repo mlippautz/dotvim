@@ -8,6 +8,7 @@ Setup (ssh/writeable):
     ./install.py --clang-completer
 
 Update (from within .vim):
+
     git pull && git submodule update --init --recursive
     cd bundle/YouCompleteMe
     ./install.py --clang-completer
