@@ -27,9 +27,9 @@ set mouse=a
 set modelines=1
 set backspace=indent,eol,start
 
+set completeopt=menu
 
 :noremap <F4> :set hlsearch! hlsearch?<CR>
-:noremap <F11> :TagbarToggle<CR>
 :noremap <F12> :call ToggleMouse()<CR>
 
 autocmd FileType html   setlocal shiftwidth=2 tabstop=2
@@ -38,11 +38,6 @@ autocmd FileType c      setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType cpp    setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType python setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType tex    setlocal spell
-
-" ck paper configuration
-autocmd BufNewFile,BufRead paper.tex  setlocal textwidth=70
-
-autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.cc,,*.java TagbarOpen
 
 " MacVim
 set guifont=Monaco:h12
@@ -57,24 +52,13 @@ function! ToggleMouse()
   endif
 endfunction
 
-
-" clang_complete options (disable preview scratch window)
-" needs (ubuntu): libclang-dev
-set completeopt=menu,menuone,longest
-" Limit popup menu height
-set pumheight=15
-" Disable auto popup, use <Tab> to autocomplete
-let g:clang_complete_auto = 1
-" Show clang errors in the quickfix window
-let g:clang_complete_copen = 1
-let g:clang_use_library = 1
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_confirm_extra_conf = 0
 
 " OS dependent stuff follows.
 let os=substitute(system('uname'), '\n', '', '')
 if os == 'Darwin' || os == 'Mac'
-  "set guifont=Inconsolata-dz:h12
-  let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
+  " OSX
 elseif os == 'Linux'
-  "set guifont=Inconsolata-dz\ Medium\ 10
-  let g:clang_library_path = '/usr/lib/x86_64-linux-gnu'
+  " Linux
 endif
